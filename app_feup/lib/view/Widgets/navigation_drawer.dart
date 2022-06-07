@@ -61,7 +61,8 @@ class NavigationDrawerState extends State<NavigationDrawer> {
         ? BoxDecoration(
             border: Border(
                 left: BorderSide(
-                    color: Theme.of(context).accentColor, width: 3.0)),
+                    color: Theme.of(context).colorScheme.primary,
+                    width: 3.0)),
             color: Theme.of(context).dividerColor,
           )
         : null;
@@ -80,7 +81,7 @@ class NavigationDrawerState extends State<NavigationDrawer> {
             style: Theme.of(context)
                 .textTheme
                 .headline6
-                .apply(color: Theme.of(context).accentColor)),
+                .apply(color: Theme.of(context).colorScheme.primary)),
       ),
     );
   }
@@ -94,7 +95,7 @@ class NavigationDrawerState extends State<NavigationDrawer> {
             child: Text(d,
                 style: TextStyle(
                     fontSize: 18.0,
-                    color: Theme.of(context).accentColor,
+                    color: Theme.of(context).colorScheme.primary,
                     fontWeight: FontWeight.normal)),
           ),
           dense: true,

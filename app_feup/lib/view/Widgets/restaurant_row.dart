@@ -55,7 +55,8 @@ class RestaurantRow extends StatelessWidget {
           decoration: BoxDecoration(
               border: Border(
                   bottom: BorderSide(
-                      width: 0.7, color: Theme.of(context).accentColor))),
+                      width: 0.7,
+                      color: Theme.of(context).colorScheme.primary))),
           child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[

@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:uni/model/entities/time_utilities.dart';
 
@@ -72,7 +72,7 @@ class GenericCardState extends State<GenericCard> {
                 ),
                 child: Container(
                   decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
+                      color: Theme.of(context).colorScheme.secondary,
                       borderRadius:
                       BorderRadius.all(Radius.circular(this.borderRadius))),
                   width: (double.infinity),

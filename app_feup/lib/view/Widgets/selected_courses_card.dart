@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uni/model/entities/course_unit.dart';
 import 'package:uni/model/entities/course_units_for_class_registration.dart';
@@ -61,7 +60,7 @@ class SelectedCoursesCardState extends State<SelectedCoursesCard> {
             alignment: Alignment.bottomRight,
             child: Icon(
               Icons.edit_outlined,
-              color: Theme.of(context).accentColor,
+              color: Theme.of(context).colorScheme.primary,
             ),
           ),
           Column(
@@ -75,10 +74,8 @@ class SelectedCoursesCardState extends State<SelectedCoursesCard> {
                     Text('Unidades curriculares selecionadas:'),
                     Text(
                       courseUnitsAbbreviated.join(', '),
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline4
-                          .apply(color: Theme.of(context).accentColor),
+                      style: Theme.of(context).textTheme.headline4.apply(
+                          color: Theme.of(context).colorScheme.primary),
                     ),
                     SizedBox(height: 10)
                   ],

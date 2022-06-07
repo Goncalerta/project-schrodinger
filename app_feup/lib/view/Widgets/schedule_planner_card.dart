@@ -125,7 +125,7 @@ class SchedulePlannerCardState extends State<SchedulePlannerCard> {
             alignment: Alignment.bottomRight,
             child: IconButton(
               iconSize: 32,
-              color: Theme.of(context).accentColor,
+              color: Theme.of(context).colorScheme.primary,
               icon: Icon(Icons.add_circle_outline_rounded),
               onPressed: () async {
                 newScheduleID = await AppPlannedScheduleDatabase()

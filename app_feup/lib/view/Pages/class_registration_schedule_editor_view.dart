@@ -135,18 +135,19 @@ class _ClassRegistrationScheduleEditorViewState
                         BorderSide(color: Colors.black.withOpacity(0.75)),
                   ),
                   labelText: 'Nome do horário',
-                  labelStyle: TextStyle(color: Theme.of(context).accentColor),
+                  labelStyle:
+                      TextStyle(color: Theme.of(context).colorScheme.primary),
                 ),
                 controller: _renameController,
               ),
             ),
             IconButton(
-              color: Theme.of(context).accentColor,
+              color: Theme.of(context).colorScheme.primary,
               icon: Icon(Icons.file_copy_outlined),
               onPressed: () => Navigator.pop(context, EditorAction.duplicate),
             ),
             IconButton(
-              color: Theme.of(context).accentColor,
+              color: Theme.of(context).colorScheme.primary,
               icon: Icon(Icons.delete_outline),
               onPressed: () => showDialog<String>(
                 context: context,
@@ -324,6 +325,7 @@ class _ClassRegistrationScheduleEditorViewState
                 ),
               ),
               child: ListTile(
+                  selectedColor: Theme.of(context).colorScheme.onPrimary,
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -350,7 +352,7 @@ class _ClassRegistrationScheduleEditorViewState
                     ],
                   ),
                   selected: courseUnitClass.name == selectedClass,
-                  selectedTileColor: Theme.of(context).accentColor,
+                  selectedTileColor: Theme.of(context).colorScheme.primary,
                   onTap: () {
                     setState(() {
                       scheduleOption.classesSelected[courseUnit.abbreviation] =
