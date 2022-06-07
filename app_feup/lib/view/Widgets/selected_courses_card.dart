@@ -39,6 +39,7 @@ class SelectedCoursesCardState extends State<SelectedCoursesCard> {
     courseUnitsAbbreviated.sort();
 
     return SectionCard(
+      key: const Key('select_courses_card'),
       onClick: () => Navigator.push(
         context,
         MaterialPageRoute(

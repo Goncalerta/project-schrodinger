@@ -120,6 +120,7 @@ abstract class GeneralPageViewState extends State<StatefulWidget> {
         builder: (BuildContext context,
             AsyncSnapshot<DecorationImage> decorationImage) {
           return TextButton(
+            key: Key('photoicon'),
             onPressed: () => {
               Navigator.push(
                   context, MaterialPageRoute(builder: (__) => ProfilePage()))

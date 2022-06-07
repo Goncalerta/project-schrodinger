@@ -123,6 +123,7 @@ class _ClassRegistrationScheduleEditorViewState
           children: [
             Expanded(
               child: TextField(
+                key: const Key('rename_schedule_input'),
                 onChanged: (text) {
                   scheduleOption.name = text;
                   AppPlannedScheduleDatabase().saveSchedule(scheduleOption);
@@ -147,6 +148,7 @@ class _ClassRegistrationScheduleEditorViewState
               onPressed: () => Navigator.pop(context, EditorAction.duplicate),
             ),
             IconButton(
+              key: Key('delete schedule'),
               color: Theme.of(context).colorScheme.primary,
               icon: Icon(Icons.delete_outline),
               onPressed: () => showDialog<String>(
