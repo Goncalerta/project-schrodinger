@@ -129,7 +129,7 @@ class _ClassRegistrationScheduleEditorViewState
                       controller: _pageController,
                       count: 2,
                       effect: ExpandingDotsEffect(
-                        activeDotColor:  Theme.of(context).accentColor,
+                        activeDotColor:  Theme.of(context).colorScheme.primary,
                       ),
                       onDotClicked:
                           (index) => _pageController.animateToPage(
