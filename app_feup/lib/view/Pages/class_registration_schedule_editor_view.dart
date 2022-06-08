@@ -129,7 +129,7 @@ class _ClassRegistrationScheduleEditorViewState
                       controller: _pageController,
                       count: 2,
                       effect: ExpandingDotsEffect(
-                        activeDotColor:  Theme.of(context).accentColor,
+                        activeDotColor:  Theme.of(context).colorScheme.primary,
                       ),
                       onDotClicked:
                           (index) => _pageController.animateToPage(
@@ -158,6 +158,7 @@ class _ClassRegistrationScheduleEditorViewState
           children: [
             Expanded(
               child: TextField(
+                key: const Key('rename_schedule_input'),
                 onChanged: (text) {
                   scheduleOption.name = text;
                   AppPlannedScheduleDatabase().saveSchedule(scheduleOption);
@@ -170,18 +171,20 @@ class _ClassRegistrationScheduleEditorViewState
                         BorderSide(color: Colors.black.withOpacity(0.75)),
                   ),
                   labelText: 'Nome do horário',
-                  labelStyle: TextStyle(color: Theme.of(context).accentColor),
+                  labelStyle:
+                      TextStyle(color: Theme.of(context).colorScheme.primary),
                 ),
                 controller: _renameController,
               ),
             ),
             IconButton(
-              color: Theme.of(context).accentColor,
+              color: Theme.of(context).colorScheme.primary,
               icon: Icon(Icons.file_copy_outlined),
               onPressed: () => Navigator.pop(context, EditorAction.duplicate),
             ),
             IconButton(
-              color: Theme.of(context).accentColor,
+              key: Key('delete schedule'),
+              color: Theme.of(context).colorScheme.primary,
               icon: Icon(Icons.delete_outline),
               onPressed: () => showDialog<String>(
                 context: context,
@@ -360,6 +363,7 @@ class _ClassRegistrationScheduleEditorViewState
                 ),
               ),
               child: ListTile(
+                  selectedColor: Theme.of(context).colorScheme.onPrimary,
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -386,7 +390,7 @@ class _ClassRegistrationScheduleEditorViewState
                     ],
                   ),
                   selected: courseUnitClass.name == selectedClass,
-                  selectedTileColor: Theme.of(context).accentColor,
+                  selectedTileColor: Theme.of(context).colorScheme.primary,
                   onTap: () {
                     setState(() {
                       scheduleOption.classesSelected[courseUnit.abbreviation] =

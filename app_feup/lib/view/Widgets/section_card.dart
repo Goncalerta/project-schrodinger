@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class SectionCard extends StatefulWidget {
@@ -46,7 +46,7 @@ class SectionCardState extends State<SectionCard> {
             ),
             child: Container(
               decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).colorScheme.secondary,
                   borderRadius:
                       BorderRadius.all(Radius.circular(this.borderRadius))),
               width: (double.infinity),

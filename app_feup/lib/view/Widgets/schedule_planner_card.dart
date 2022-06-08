@@ -124,8 +124,9 @@ class SchedulePlannerCardState extends State<SchedulePlannerCard> {
           Align(
             alignment: Alignment.bottomRight,
             child: IconButton(
+              key: const Key('create_new_schedule'),
               iconSize: 32,
-              color: Theme.of(context).accentColor,
+              color: Theme.of(context).colorScheme.primary,
               icon: Icon(Icons.add_circle_outline_rounded),
               onPressed: () async {
                 newScheduleID = await AppPlannedScheduleDatabase()

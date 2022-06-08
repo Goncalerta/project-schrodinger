@@ -58,10 +58,8 @@ class BusStopCard extends GenericCard {
                   Text('Configura os teus autocarros',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline4
-                          .apply(color: Theme.of(context).accentColor)),
+                      style: Theme.of(context).textTheme.headline4.apply(
+                          color: Theme.of(context).colorScheme.primary)),
                   IconButton(
                     icon: Icon(Icons.settings),
                     onPressed: () => Navigator.push(
@@ -92,7 +90,7 @@ class BusStopCard extends GenericCard {
                   style: Theme.of(context)
                       .textTheme
                       .headline4
-                      .apply(color: Theme.of(context).accentColor)))
+                      .apply(color: Theme.of(context).colorScheme.primary)))
         ]);
         break;
     }
@@ -107,7 +105,7 @@ class BusStopCard extends GenericCard {
             style: Theme.of(context)
                 .textTheme
                 .headline4
-                .apply(color: Theme.of(context).accentColor)),
+                .apply(color: Theme.of(context).colorScheme.primary)),
       ],
     );
   }

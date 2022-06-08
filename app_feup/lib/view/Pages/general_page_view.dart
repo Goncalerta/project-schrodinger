@@ -57,7 +57,7 @@ abstract class GeneralPageViewState extends State<StatefulWidget> {
             key: GlobalKey<RefreshIndicatorState>(),
             child: child,
             onRefresh: refresh,
-            color: Theme.of(context).accentColor);
+            color: Theme.of(context).colorScheme.primary);
       },
     );
   }
@@ -87,7 +87,7 @@ abstract class GeneralPageViewState extends State<StatefulWidget> {
         ),
       ),
       elevation: 0,
-      iconTheme: IconThemeData(color: Theme.of(context).accentColor),
+      iconTheme: IconThemeData(color: Theme.of(context).colorScheme.primary),
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       titleSpacing: 0.0,
       title: ButtonTheme(
@@ -120,6 +120,7 @@ abstract class GeneralPageViewState extends State<StatefulWidget> {
         builder: (BuildContext context,
             AsyncSnapshot<DecorationImage> decorationImage) {
           return TextButton(
+            key: Key('photoicon'),
             onPressed: () => {
               Navigator.push(
                   context, MaterialPageRoute(builder: (__) => ProfilePage()))

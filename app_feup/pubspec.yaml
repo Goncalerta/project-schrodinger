@@ -36,13 +36,14 @@ dependencies:
   image: ^3.0.0-nullsafety.0
   connectivity: ^0.4.4
   logger: ^0.9.4
-  url_launcher: ^6.0.2
+  url_launcher: 6.0.10
   flutter_markdown: ^0.6.0
   intl: ^0.17.0
   crypto: ^3.0.1
-  add_2_calendar: ^1.4.0
+  add_2_calendar: ^2.1.2
   sentry_flutter: ^5.0.0
   email_validator: ^1.0.6
+  flutter_gherkin: ^2.0.0
   smooth_page_indicator: any
 
   # The following adds the Cupertino Icons font to your application.
@@ -56,7 +57,7 @@ dev_dependencies:
     sdk: flutter
 
   test: any
-  mockito: ^4.1.1
+  mockito:
   flutter_launcher_icons: ^0.9.0
   flutter_native_splash: ^1.0.3
 

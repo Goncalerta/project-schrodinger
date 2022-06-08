@@ -42,6 +42,9 @@ assets/env/*
 .pub/
 build/
 
+# Gherkin
+test_report.json
+
 # Android related
 **/android/**/gradle-wrapper.jar
 **/android/.gradle

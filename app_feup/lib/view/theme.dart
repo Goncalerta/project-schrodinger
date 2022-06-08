@@ -8,14 +8,28 @@ const Color _grey = Color.fromARGB(255, 0x7f, 0x7f, 0x7f);
 const Color _strongGrey = Color.fromARGB(255, 90, 90, 90);
 const Color _mildBlack = Color.fromARGB(255, 0x30, 0x30, 0x30);
 
+ColorScheme _colorScheme = ColorScheme(
+  brightness: Brightness.light,
+  primary: _darkRed,
+  secondary: Colors.white,
+  surface: Colors.white,
+  background: _mildWhite,
+  error: _lightRed,
+  onPrimary: Colors.white,
+  onSecondary: Colors.white,
+  onSurface: _grey,
+  onBackground: _grey,
+  onError: _grey,
+);
+
 ThemeData applicationLightTheme = ThemeData(
-    brightness: Brightness.light,
-    primaryColor: Colors.white,
-    accentColor: _darkRed,
+    brightness: _colorScheme.brightness,
+    primaryColor: _colorScheme.primary,
     dividerColor: _lightGrey,
     hintColor: _lightGrey,
-    backgroundColor: _mildWhite,
-    scaffoldBackgroundColor: _mildWhite,
+    backgroundColor: _colorScheme.background,
+    scaffoldBackgroundColor: _colorScheme.background,
+    colorScheme: _colorScheme,
     textTheme: TextTheme(
       headline1: TextStyle(
           fontSize: 72.0, fontWeight: FontWeight.bold, color: _darkRed),
