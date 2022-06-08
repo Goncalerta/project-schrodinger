@@ -24,13 +24,13 @@ class ClassRegistrationPageView extends StatefulWidget {
 }
 
 class _ClassRegistrationPageViewState extends SecondaryPageViewState {
-  List<CourseUnit> courseUnits = [];
-
   Map<Semester, SchedulePreferenceList> options = Map();
   Map<Semester, CourseUnitsForClassRegistration> selectedCourseUnits = Map();
   Semester _semester = null;
+  List<CourseUnit> courseUnits = null;
   Future<void> ongoingFuture = null;
   SharedPreferences prefs = null;
+
   Future<void> startGetData(Semester semester) async {
     final AppPlannedScheduleDatabase db = AppPlannedScheduleDatabase();
 
@@ -49,15 +49,17 @@ class _ClassRegistrationPageViewState extends SecondaryPageViewState {
       );
     }
 
-    final RegisterablesFetcher regFetcher = RegisterablesFetcherMock();
-    courseUnits = await regFetcher.getRegisterables();
+    if (courseUnits == null) {
+      final RegisterablesFetcher regFetcher = RegisterablesFetcherMock();
+      courseUnits = await regFetcher.getRegisterables();
 
-    final ClassFetcher classFetcher = ClassFetcherMock();
-    courseUnits.forEach((unit) async {
-      final List<CourseUnitClass> classes =
-          await classFetcher.getClasses(unit.occurrId);
-      unit.classes = classes;
-    });
+      final ClassFetcher classFetcher = ClassFetcherMock();
+      courseUnits.forEach((unit) async {
+        final List<CourseUnitClass> classes =
+            await classFetcher.getClasses(unit.occurrId);
+        unit.classes = classes;
+      });
+    }
 
     if (!selectedCourseUnits.containsKey(semester)) {
       selectedCourseUnits[semester] = CourseUnitsForClassRegistration(
