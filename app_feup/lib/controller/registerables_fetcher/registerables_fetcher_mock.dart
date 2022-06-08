@@ -71,16 +71,6 @@ class RegisterablesFetcherMock extends RegisterablesFetcher {
           semesterName: Semester.first.toName()),
     ];
 
-    final String semester = '2S';
-
-    final List<CourseUnit> registerables = [];
-
-    for (var unit in fetchedUnits) {
-      if (unit.semesterCode == semester) {
-        registerables.add(unit);
-      }
-    }
-
-    return registerables;
+    return fetchedUnits;
   }
 }
