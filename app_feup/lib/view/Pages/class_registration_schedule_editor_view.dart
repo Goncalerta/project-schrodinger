@@ -108,6 +108,9 @@ class _ClassRegistrationScheduleEditorViewState
             buildScheduleEditor(context),
             buildScheduleDisplay(context),
           ],
+          onPageChanged: (page) {
+            _renameFocus.unfocus();
+          },
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -140,9 +143,6 @@ class _ClassRegistrationScheduleEditorViewState
           ],
         ),
       ],
-      onPageChanged: (page) {
-        _renameFocus.unfocus();
-      },
     );
   }
 
