@@ -1,5 +1,5 @@
 Feature: Delete a Schedule
-  The schedule option should be removed from the list when we eliminate it
+  As a Student, I want to delete a schedule so that it's removed from my list of options.
 
   Background:
     Given I pause for 5 seconds
@@ -9,10 +9,9 @@ Feature: Delete a Schedule
 
   Scenario: Deleting a schedule
     Given I have courses selected for class registration
-    And I have a schedule named "Novo Horário Teste Gherkin"
-    When I tap the button that contains the text "Novo Horário Teste Gherkin"
+    And I have a schedule named "Teste Gherkin"
+    When I tap the button that contains the text "Teste Gherkin"
     And I tap the "delete schedule" icon
     And I tap the button that contains the text "Apagar"
     Then I expect the text "Escolha de Turmas" to be present
-    And I expect the text "Novo Horário Teste Gherkin" to be absent
-
+    And I expect the text "Teste Gherkin" to be absent
